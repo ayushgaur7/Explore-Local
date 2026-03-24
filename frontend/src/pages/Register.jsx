@@ -15,7 +15,7 @@ const Register = () => {
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
     const [notification, setNotification] = useState(null);
     const [loading, setLoading] = useState(false);
-    
+
     // Password validation state
     const [passwordCriteria, setPasswordCriteria] = useState({
         length: false,
@@ -60,7 +60,7 @@ const Register = () => {
 
         setLoading(true);
 
-        const result = await register(formData.name, formData.email, formData.password);
+        const result = await register({ name: formData.name, email: formData.email, password: formData.password });
 
         if (result.success) {
             navigate('/');
@@ -79,10 +79,10 @@ const Register = () => {
             </div>
 
             <div className="relative z-50">
-                <Notification 
-                    message={notification?.message} 
-                    type={notification?.type} 
-                    onClose={() => setNotification(null)} 
+                <Notification
+                    message={notification?.message}
+                    type={notification?.type}
+                    onClose={() => setNotification(null)}
                 />
             </div>
 
@@ -160,7 +160,7 @@ const Register = () => {
                                     {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
                                 </button>
                             </div>
-                            
+
                             {/* Password Strength Indicators */}
                             {formData.password && (
                                 <div className="mt-3 grid grid-cols-2 gap-2 text-xs">
@@ -213,9 +213,8 @@ const Register = () => {
                                 </button>
                             </div>
                             {formData.confirmPassword && (
-                                <div className={`mt-2 text-xs flex items-center gap-1 ${
-                                    formData.password === formData.confirmPassword ? 'text-green-600' : 'text-red-500'
-                                }`}>
+                                <div className={`mt-2 text-xs flex items-center gap-1 ${formData.password === formData.confirmPassword ? 'text-green-600' : 'text-red-500'
+                                    }`}>
                                     {formData.password === formData.confirmPassword ? (
                                         <>
                                             <Check className="h-3 w-3" /> Passwords match

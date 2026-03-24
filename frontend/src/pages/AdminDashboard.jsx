@@ -161,35 +161,7 @@ const AdminDashboard = () => {
                         </div>
                     </div>
 
-                    {/* Sidebar / Quick Actions */}
-                    <div className="lg:col-span-1">
-                        <div className="bg-gray-900 text-white rounded-3xl p-8 shadow-xl">
-                            <h3 className="font-bold text-lg mb-4">System Health</h3>
-                            <div className="space-y-6">
-                                <div>
-                                    <div className="flex justify-between text-sm mb-1 text-gray-400">
-                                        <span>Server Load</span>
-                                        <span>12%</span>
-                                    </div>
-                                    <div className="w-full bg-gray-700 rounded-full h-2">
-                                        <div className="bg-green-500 h-2 rounded-full" style={{ width: '12%' }}></div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div className="flex justify-between text-sm mb-1 text-gray-400">
-                                        <span>DB Connection</span>
-                                        <span className="text-green-400">Stable</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="border-t border-gray-700 my-6"></div>
-
-                            <button className="w-full py-3 bg-red-600 hover:bg-red-700 rounded-xl font-bold transition">
-                                Maintenance Mode
-                            </button>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
